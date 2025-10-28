@@ -1,6 +1,6 @@
 # Sequence Analytics System  
 *(Bioinformatics Data Governance and Quality Pipeline)*
-
+![Project Preview](reports/preview.png)
 This project implements a complete data governance pipeline for genomic datasets.  
 It validates DNA and mRNA sequences, evaluates data integrity, and stores automated quality metrics in a local SQLite database.
 
