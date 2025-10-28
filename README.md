@@ -1,4 +1,6 @@
 # Sequence Analytics System  
+*(Bioinformatics Data Governance for TP53 Gene Sequences)*
+
 ![Project Preview](reports/preview.png)
 This project implements a complete data governance pipeline for genomic datasets.  
 It validates DNA and mRNA sequences, evaluates data integrity, and stores automated quality metrics in a local SQLite database.
@@ -9,8 +11,13 @@ The goal is to ensure that bioinformatics datasets are accurate, complete, and r
 
 ## Overview
 
-The project reads and validates genomic sequences (FASTA or CSV format), identifies anomalies, and calculates key statistics such as GC content and sequence length.  
-It then generates an HTML summary report and uploads it to a secure Google Cloud Storage bucket.
+This project implements a data governance and validation pipeline for genomic sequences, focusing on the **TP53 gene** — a well-studied tumor suppressor associated with several human cancers.  
+It demonstrates how to validate, analyze, and manage biological sequence data using Python and cloud-based infrastructure.
+
+---
+### Why TP53?
+TP53 is a critical tumor suppressor gene responsible for regulating cell cycle and apoptosis.  
+Mutations in TP53 are among the most common genetic alterations found in human cancers, making it an ideal candidate for demonstrating sequence validation and quality governance in bioinformatics workflows.
 
 ---
 
