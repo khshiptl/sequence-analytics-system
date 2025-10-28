@@ -1,49 +1,58 @@
-Bioinformatics Data Governance and Quality System
-=================================================
+# Sequence Analytics System  
+*(Bioinformatics Data Governance and Quality Pipeline)*
 
 This project implements a complete data governance pipeline for genomic datasets.  
-It validates DNA sequences, evaluates data integrity, and stores automated analysis reports securely in Google Cloud.
+It validates DNA and mRNA sequences, evaluates data integrity, and stores automated quality metrics in a local SQLite database.
 
-The goal is to ensure that bioinformatics datasets are accurate, complete, and ready for downstream research or analysis.
+The goal is to ensure that bioinformatics datasets are accurate, complete, and reproducible through automated validation and reporting.
 
-Overview
---------
+---
 
-The project reads and validates DNA or mRNA sequence data (FASTA format), performs quality checks, and calculates GC content and sequence length statistics.  
-It then generates an HTML summary report and uploads it to a secure Google Cloud Storage bucket for traceability and governance.
+## Overview
 
-Objectives
-----------
+The project reads and validates genomic sequences (FASTA or CSV format), identifies anomalies, and calculates key statistics such as GC content and sequence length.  
+It then generates an HTML summary report and uploads it to a secure Google Cloud Storage bucket.
 
-• Validate real genomic sequence data obtained from NCBI (for example, the TP53 tumor suppressor gene).  
-• Detect invalid or duplicate DNA sequences.  
-• Calculate average GC content, sequence length, and overall data quality score.  
-• Automate HTML report generation and cloud upload through Google Cloud Storage.
+---
 
-Tools and Skills
-----------------
+## Objectives
+
+- Validate real genomic sequence data obtained from NCBI (e.g., the **TP53** tumor suppressor gene).  
+- Detect invalid or duplicate DNA sequences.  
+- Calculate average GC content, sequence length, and overall data quality score.  
+- Automate HTML report generation and cloud upload using Google Cloud Storage.  
+- Maintain a historical log of all validation runs in SQLite for reproducibility.
+
+---
+
+## Tools and Skills
 
 | Tool | Purpose |
 |------|----------|
 | Python (pandas, biopython) | Sequence validation and analysis |
+| SQLite | Local database for versioned logging |
 | Google Cloud Storage | Secure cloud storage and governance |
 | HTML / JSON | Reporting and structured data logging |
 | Git / GitHub | Version control and documentation |
 
-Repository Contents
--------------------
+---
+
+## Repository Contents
 
 | File | Description |
 |------|--------------|
-| src/fasta_to_csv.py | Converts FASTA sequences into structured CSV data |
-| src/validate_sequences.py | Performs DNA sequence validation and scoring |
-| src/generate_report.py | Generates the HTML report with metrics |
-| src/view_logs.py | Displays previous validation runs and scores |
-| reports/data_quality_report.html | Example output from TP53 dataset analysis |
-| gcp_key.json | Google Cloud service credentials (excluded from public repo) |
+| `src/fasta_to_csv.py` | Converts FASTA sequences into structured CSV data |
+| `src/validator_step1.py` | Performs initial data validation and missing value checks |
+| `src/validator_step2.py` | Performs DNA sequence validation and scoring |
+| `src/generate_report.py` | Generates the HTML report with metrics |
+| `src/view_logs.py` | Displays previous validation runs and quality scores |
+| `reports/data_quality_report.html` | Example output from the TP53 dataset analysis |
+| `governance.db` | Local SQLite database for tracking validation runs |
+| `.gitignore` | Ensures sensitive keys (e.g., `gcp_key.json`) are excluded from commits |
 
-Example Output
---------------
+---
+
+## Example Output
 
 | Metric | Result |
 |--------|---------|
@@ -55,16 +64,9 @@ Example Output
 | Average Sequence Length | 19,060 bp |
 | Average GC Content | 49.38% |
 
-Key Insights
-------------
+---
 
-• The TP53 gene data showed 100 percent validity and no missing or duplicate records.  
-• GC content and sequence length metrics aligned with published characteristics of TP53 genomic regions.  
-• The system demonstrates real-world data governance workflows applied to bioinformatics research.
+## Author
 
-Author
-------
-
-Created by Khushi Patel  
-Bioinformatics Data Governance Project – 2025
+Created by **Khushi Patel**
 
