@@ -11,7 +11,7 @@ The goal is to ensure that bioinformatics datasets are accurate, complete, and r
 
 ## Overview
 
-This project implements a data governance and validation pipeline for genomic sequences, focusing on the **TP53 gene** — a well-studied tumor suppressor associated with several human cancers.  
+This project implements a data governance and validation pipeline for genomic sequences, focusing on the **TP53 gene** , a well-studied tumor suppressor associated with several human cancers.  
 It demonstrates how to validate, analyze, and manage biological sequence data using Python and cloud-based infrastructure.
 
 ---
